@@ -66,7 +66,8 @@ parser.add_argument('-f','--file', dest='filename', required=True,
                    help='The file that contains IP ranges')
 parser.add_argument('-o','--outfile', dest='outfile',
                    help='Output file')
-#parser.add_argument('-u','--url', dest='url',help='URL of list')
+#parser.add_argument('-u','--url', dest='url',
+                   help='URL of list')
 
 args = parser.parse_args()
 
@@ -80,7 +81,6 @@ else:
 
     if args.outfile:
         fo = open(args.outfile,'w+')
-        print "Converting..."
         for ipx in ips:
             fo.write(calculate(ipx)+'\n')
         fo.close()
